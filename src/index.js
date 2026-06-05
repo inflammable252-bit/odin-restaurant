@@ -3,10 +3,11 @@ import "./reset.css"
 
 import buildHome from "./home.js"
 import buildMenu from "./menu.js"
+import buildAbout from "./about.js"
 
 let currentPage = "home";
 let contentDiv = document.getElementById("content");
-switchTab("currentPage");
+switchTab(currentPage);
 
 const buttons = document.querySelector(".button-wrapper");
 
@@ -24,6 +25,10 @@ function switchTab(tab) {
         case "menu":
             buildMenu();
             currentPage = "menu";
+            break;
+        case "about":
+            buildAbout();
+            currentPage = "about";
             break;
     }
 }

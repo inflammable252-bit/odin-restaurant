@@ -5,5 +5,4 @@ export default function buildMenu() {
     const headline = document.createElement("h2")
     headline.textContent = "Menu";
     content.appendChild(headline)
-    console.log("on menu!")
 }

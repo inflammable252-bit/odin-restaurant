@@ -9,7 +9,9 @@ body {
     display: grid;
     grid-template-rows: auto 1fr 0.1fr;
     grid-template-columns: 0.1fr 1fr 0.1fr;
-    gap: calc(1rem + 1vw)
+}
+img {
+    height: auto;
 }
 header {
     grid-column: 1/-1;
@@ -18,28 +20,34 @@ h1 {
     display: flex;
     flex-direction: column;
     line-height: 1;
-    font-size: calc(2rem + 0.5vw)
+    font-size: calc(2.5rem + 0.5vw);
+    padding: calc(0.5rem + 0.5vw)
+
 }
 nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: column;
-    align-items: center;
+    align-items: end;
     background-color: var(--theme);
-    padding: calc(0.5rem + 0.5vw)
 }
-
+nav .button-wrapper {
+    display: flex;
+    flex-shrink: 0;
+    gap:calc(0.6rem + 1vw);
+}
 nav button {
+    background-color: white;
     border: 0px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    margin: 1rem;
+    border-radius: 12px 12px 0 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0.75rem 2.25rem;
 }
 
 div#content {
     grid-column: 2/3;
-    background-color: rgba(171, 223, 171, 0.87);
+    background-color: white;
 }
 footer {
     background-color: var(--theme);

@@ -16,38 +16,74 @@ img {
 header {
     grid-column: 1/-1;
 }
-h1 {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-    font-size: calc(2.5rem + 0.5vw);
-    padding: calc(0.5rem + 0.5vw)
 
-}
-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-flow: column;
-    align-items: end;
-    background-color: var(--theme);
-}
-nav .button-wrapper {
+.button-wrapper {
     display: flex;
     flex-shrink: 0;
     gap:calc(0.6rem + 1vw);
 }
-nav button {
-    background-color: white;
+.button-wrapper button {
+    background-color: lightgray;
     border: 0px;
     border-radius: 12px 12px 0 0;
     font-size: 1.4rem;
     font-weight: 700;
     padding: 0.75rem 2.25rem;
 }
-
+.button-wrapper button:hover {
+    transform: translate(5px);
+    transition: 0.2s transform ease-in;
+}
 div#content {
     grid-column: 2/3;
     background-color: white;
+    position: relative;
+    padding: calc(0.5rem + 1vw) 0;
+}
+h1 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-size: calc(2.5rem + 0.5vw);
+    padding: calc(0.5rem + 0.5vw)
+}
+h2.inline {
+    z-index: 1;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    display: inline;
+    position: absolute;
+    top: 5vw;
+    left: 5vw;
+    color: white;
+}
+div#heroContainer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: relative;
+    width: 100vw;
+    height: fit-content;
+    background: #000000;
+}
+img#hero {
+    grid-column: 2/3;
+    position: relative;
+    z-index: 0;
+    align-self: right;
+}
+div#heroCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    min-width: 100vw;
+    height: 100%;
+    background: linear-gradient(90deg, #040301 25%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 93%, rgba(0, 0, 0, 1) 100%);}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    align-items: end;
+    background-color: var(--theme);
 }
 footer {
     background-color: var(--theme);

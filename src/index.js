@@ -5,7 +5,7 @@ import buildHome from "./home.js"
 import buildMenu from "./menu.js"
 import buildAbout from "./about.js"
 
-let currentPage = "home";
+let currentPage = "menu";
 let contentDiv = document.getElementById("content");
 
 pageOpen();
@@ -24,7 +24,6 @@ buttons.addEventListener("click", (e) => {
     updateTabColor()
 })
 function switchTab(tab) {
-    contentDiv.style.opacity = 0;
     switch (tab) {
         case "home":
             buildHome();
@@ -39,7 +38,6 @@ function switchTab(tab) {
             currentPage = "about";
             break;
     }
-    contentDiv.style.opacity = 1;
 }
 function updateTabColor() {
     const allTabs = document.querySelectorAll(".button-wrapper > button");

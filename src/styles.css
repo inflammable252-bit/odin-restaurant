@@ -1,20 +1,25 @@
 :root {
-    --theme: rgba(135, 194, 135, 0.87);
+    --theme1: #c36e5f;
+    --theme2: #7BBA59;
+    --section-bg: #FAE3E3;
 }
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr 0.1fr;
     grid-template-columns: 0.1fr 1fr 0.1fr;
+    align-content: start;
 }
 img {
     height: auto;
 }
 header {
+    grid-row: 1/2;
     grid-column: 1/-1;
+    height: auto;
 }
 nav {
     display: grid;
@@ -22,8 +27,9 @@ nav {
     grid-auto-flow: column;
     gap: clamp(1rem, 7vw, 30%);
     align-items: end;
-    background-color: var(--theme);
+    background-color: var(--theme1)
 }
+
 .button-wrapper {
     display: flex;
     flex-shrink: 0;
@@ -73,13 +79,14 @@ nav {
         display: block;
     }
 }
-div#content {
+article#content {
     grid-column: 2/3;
     background-color: white;
     position: relative;
     padding: calc(0.5rem + 1vw) 0;
-    transition: 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
 }
+
 h1 {
     display: flex;
     flex-direction: column;
@@ -111,6 +118,7 @@ img#hero {
     align-self: right;
 }
 div#heroCover {
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -118,6 +126,61 @@ div#heroCover {
     min-width: 100vw;
     height: 100%;
     background: linear-gradient(90deg, #040301 25%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 93%, rgba(0, 0, 0, 1) 100%);}
+
+/* Menu */
+section#menu-section {
+    padding: 0 2vw;
+}
+.menu {
+text-align: center;
+}
+h2.menu {
+    font-size: 1.7rem;
+}
+div#menu-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) minmax(300px, 1fr));
+    grid-auto-rows: max-content;
+    gap: 3vw;
+    padding: 2vw;
+}
+article.box {
+    line-height: 1.2;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    gap: 1vw;
+}
+article.box p:first-child {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+article.box img {
+    justify-self: center;
+    max-width: 80%;
+}
+@media (max-width: 830px) {
+    div#menu-wrapper {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+ul.specials {
+    width: fit-content;
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    border: 1px solid black;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+ul.specials li {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
 footer {
     background-color: var(--theme);
     grid-column: 1/-1;

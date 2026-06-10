@@ -1,4 +1,4 @@
-import { original330w, bites330w, chocolate330w, sundae330w, original700w, bites700w, chocolate700w, sundae700w } from "./menuImages.js"
+import { original330w, bites330w, chocolate330w, sundae330w, original700w, bites700w, chocolate700w, sundae700w } from "./srcset-images.js"
 
 let content = document.getElementById("content");
 
@@ -46,7 +46,7 @@ function buildMain() {
     mainSection.id = "menu-section";
     const headline = document.createElement("h2");
     headline.textContent = "Menu";
-    headline.classList.add("menu");
+    headline.classList.add("page-title");
 
     const menu = document.createElement("div");
     menu.id = "menu-wrapper";

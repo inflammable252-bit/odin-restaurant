@@ -5,7 +5,7 @@ import buildHome from "./home.js"
 import buildMenu from "./menu.js"
 import buildAbout from "./about.js"
 
-let currentPage = "menu";
+let currentPage = "about";
 let contentDiv = document.getElementById("content");
 
 pageOpen();

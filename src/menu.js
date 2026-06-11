@@ -42,7 +42,7 @@ function buildMenu() {
 }
 
 function buildMain() {
-    const mainSection = document.createElement("section");
+    const mainSection = document.createElement("article");
     mainSection.id = "menu-section";
     const headline = document.createElement("h2");
     headline.textContent = "Menu";
@@ -53,7 +53,7 @@ function buildMain() {
 
     function makeBoxes() {
         menuItems.forEach((item) => {
-        const box = document.createElement("article");
+        const box = document.createElement("section");
         box.classList.add("box")
         
         const name = document.createElement("p");
@@ -89,6 +89,7 @@ function buildMain() {
 
 function buildSpecials() {
     const specialsSection = document.createElement("article");
+    specialsSection.id = "specials-section";
 
     const headline = document.createElement("h2");
     headline.textContent = "Featured Specials";

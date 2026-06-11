@@ -102,9 +102,13 @@ function combiner() {
     const section3 = document.getElementById("about-section-3")
     const contactBox = document.getElementById("contact-wrapper")
     const imgs = new getImages();
+    const headlineSection = document.createElement("section");
+    headlineSection.id = "headline-section"
 
     section1.append(text[0], imgs.section1Image)
-    section2.append(text[1], contactBox, imgs.section2Image)
+    section1.after(headlineSection)
+    headlineSection.append(text[1])
+    section2.append(contactBox, imgs.section2Image)
     imgs.section3Images.forEach((img) => {
         section3.append(img)
     })

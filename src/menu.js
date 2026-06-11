@@ -82,7 +82,7 @@ function buildMain() {
         })
     }
 
-    mainSection.appendChild(headline);
+    content.appendChild(headline);
     makeBoxes()
     content.appendChild(mainSection)
 }
@@ -93,6 +93,7 @@ function buildSpecials() {
 
     const headline = document.createElement("h2");
     headline.textContent = "Featured Specials";
+    headline.id = "specials-header"
     
     const para = document.createElement("p");
     para.textContent = "There's always something new to discover at Churro Stand. Our featured menu showcases a rotating selection of limited-time churros, creative flavor combinations, and unique twists on our classic favorites.";
@@ -108,7 +109,7 @@ function buildSpecials() {
         itemBox.appendChild(entry)
     })
 
-    specialsSection.appendChild(headline);
+    content.appendChild(headline);
     specialsSection.appendChild(para);
     specialsSection.appendChild(headline2);
     specialsSection.appendChild(itemBox);

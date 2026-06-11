@@ -8,7 +8,37 @@
     --pad: calc(1rem + 1vw);
 }
 * {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Josefin Sans, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+}
+h1, h2, h3 {
+    font-family: Bree Serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+@font-face {
+    font-family: 'Bree Serif';
+    src: url('./fonts/BreeSerif-Regular.woff2') format('woff2'),
+        url('./fonts/BreeSerif-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('./fonts/JosefinSans-ThinItalic.woff2') format('woff2'),
+        url('./fonts/JosefinSans-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('./fonts/JosefinSans-Thin.woff2') format('woff2'),
+        url('./fonts/JosefinSans-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 body {
     min-height: 100vh;

@@ -1,7 +1,8 @@
 :root {
-    --theme1: rgb(192, 82, 35);
-    --theme2: rgb(148, 161, 111);
-    --theme3: rgb(249, 204, 144);
+    --theme-r: rgb(192, 82, 35);
+    --theme-g: rgb(148, 161, 111);
+    --theme-y: rgb(249, 204, 144);
+    --theme-y2: rgb(247, 159, 43);
     --section-bg: #FAE3E3;
 
     --header-font: Bree Serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -63,7 +64,7 @@ nav {
     grid-auto-flow: column;
     gap: clamp(1rem, 7vw, 30%);
     align-items: end;
-    background-color: var(--theme1)
+    background-color: var(--theme-r)
 }
 
 .button-wrapper {
@@ -176,14 +177,13 @@ div#heroCover {
 
 /* Menu */
 article#menu-section {
-    background-color: var(--theme3);
+    background-color: var(--theme-y);
     width: 100vw;
     h2 {
         padding-bottom: 0;
     }
 }
 #menu-section, #specials-section {
-    font-size: var(--base-font);
     img {
         border-radius: 16px;
     }
@@ -194,7 +194,7 @@ h2.page-title {
     padding-bottom: var(--pad)
 }
 div#menu-wrapper {
-    background-color: var(--theme3);
+    background-color: var(--theme-y);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) minmax(300px, 1fr));
     grid-auto-rows: max-content;
@@ -225,46 +225,50 @@ section.box img {
 article#specials-section {
     margin: var(--pad);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.75fr 1fr;
     grid-template-rows: repeat(4, auto);
-    gap: max(1rem, 1vw);
+    column-gap: max(1rem, 1vw);
     justify-items: center;
-    h2 {
-        grid-column: 1/3;
-        grid-row: 1/2;
-        text-align: center;
-    }
     p {
         grid-column: 1/2;
-        grid-row: 2/5;
+        grid-row: 3/5;
         max-width: 60ch;
     }
     h3 {
+        font-weight: normal;
         grid-column: 2/3;
         grid-row: 2/3;
     }
     ul {
+        margin-top: 1vw;
         grid-column: 2/3;
         grid-row: 3/4;
-        margin-top: -8px;
+        background-color: var(--theme-r);
     }
     h3, ul {
         margin-left: 1vw;
     }
+}
+article#specials-section h2 {
+    padding: 2vw 0 calc(0.75rem + 1vw);
+    font-size: 1.3rem;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    text-align: center;
 }
 ul.specials {
     width: fit-content;
     list-style: none;
     padding-left: 0;
     font-size: 1.15rem;
-    border: 1px solid black;
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
 }
 ul.specials li {
-    border: 1px solid black;
+    background-color: var(--theme-y2);
     padding: 1rem 2.5rem;
     align-content: center;
 }
@@ -284,18 +288,22 @@ section#about-section-1 {
     display: flex;
     justify-content: center;
     gap: calc(0.75rem + 2vw);
+    flex-shrink: 0;
     p {
         padding: 1rem;
+        width: 50%;
         max-width: 60ch;
         order: 2;
         flex-shrink: 0;
     }
     img {
-        max-width: 400px;
+        width: 30%;
+        height: auto;
+        max-width: 300px;
     }
 }
 section#about-section-2 {
-    background-color: var(--theme3);
+    background-color: var(--theme-y);
     padding: var(--pad);
    display: grid;
    grid-template-columns: 0.75fr 1fr;
@@ -315,7 +323,6 @@ section#about-section-2 {
     img {
         grid-column: 2/3;
         grid-row: 2/3;
-        max-width: 800px;
     }
     #contact-wrapper {
         margin-top: -20px;
@@ -334,7 +341,7 @@ section#about-section-2 {
             width: fit-content;
             border: none;
             border-radius: 24px;
-            background-color: var(--theme2);
+            background-color: var(--theme-g);
             padding: 0.5rem 1.5rem;
         }
         address {

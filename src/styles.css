@@ -298,9 +298,10 @@ article#section-wrapper {
 section#about-section-1 {
     background-color: var(--theme-ly);
     padding: var(--pad);
+    width: 100vw;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 0.5fr clamp(150px, 100%, 400px) clamp(20ch, 100%, 80ch) 0.5fr;
+    grid-template-columns: 0.5fr minmax(200px, 450px) minmax(30ch, 80ch) 0.5fr;
     grid-template-rows: auto auto;
     justify-items: center;
     img {

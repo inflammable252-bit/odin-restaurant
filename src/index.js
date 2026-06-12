@@ -7,7 +7,7 @@ import buildAbout from "./about.js"
 
 export {currentPage, switchTab, updateTabColor};
 
-let currentPage = "menu";
+let currentPage = "about";
 let contentDiv = document.getElementById("content");
 
 pageOpen();

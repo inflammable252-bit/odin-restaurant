@@ -69,7 +69,7 @@ function buildMain() {
         image.alt = item.alt;
 
         image.srcset = item.urlS + " 330w," + item.url + " 700w";
-        image.sizes = "(width <= 800px) 330w, 700w";
+        image.sizes = "(width <= 800px) 330px, 700px";
         image.src= item.url;
 
         box.appendChild(name)

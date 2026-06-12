@@ -91,8 +91,8 @@ function createContact() {
     const contactWrapper = document.createElement("div");
     contactWrapper.classList.add("contact");
     contactWrapper.id = "contact-wrapper";
-    contactWrapper.append(toMenuButton, contactInfo)
-    content.append(contactWrapper)
+    contactWrapper.append(contactInfo)
+    content.append(contactWrapper, toMenuButton)
 }
 
 function combiner() {
@@ -101,11 +101,12 @@ function combiner() {
     const section2 = document.getElementById("about-section-2")
     const section3 = document.getElementById("about-section-3")
     const contactBox = document.getElementById("contact-wrapper")
+    const button = document.getElementById("about-menu-button")
     const imgs = new getImages();
     const headlineSection = document.createElement("section");
     headlineSection.id = "headline-section"
 
-    section1.append(text[0], imgs.section1Image)
+    section1.append(text[0], imgs.section1Image, button)
     section1.after(headlineSection)
     headlineSection.append(text[1])
     section2.append(contactBox, imgs.section2Image)

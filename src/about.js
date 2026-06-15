@@ -33,12 +33,12 @@ export default function buildAbout() {
     combiner();    
 }
 function createText() {
-        aboutTextArr.forEach((textBlock, index) => {
-        const para = document.createElement("p");
-        para.textContent = textBlock,
-        para.id = `about-${index + 1}`
+    aboutTextArr.forEach((textBlock, index) => {
+    const para = document.createElement("p");
+    para.textContent = textBlock,
+    para.id = `about-${index + 1}`
 
-        content.appendChild(para)
+    content.appendChild(para)
     })
 }
 function createSections() {
@@ -78,7 +78,6 @@ function createContact() {
         updateTabColor()
         scroll(0,0)
     })
-
     const contactInfo = document.createElement("address")
     contactInfo.id = "contact-box";
     contactArr.forEach((text) => {
@@ -87,7 +86,7 @@ function createContact() {
         line.classList.add("contact-info");
         contactInfo.appendChild(line)
     });
-
+    
     const contactWrapper = document.createElement("div");
     contactWrapper.classList.add("contact");
     contactWrapper.id = "contact-wrapper";

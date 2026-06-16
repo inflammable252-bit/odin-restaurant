@@ -8,6 +8,7 @@ let content = document.getElementById("content");
 
 export default function buildHome() {
     content.replaceChildren()
+
     buildHero()
     buildHomeContent()
     buildHomeImages()
@@ -53,11 +54,51 @@ function buildHero() {
 }
 
 function buildHomeContent() {
-    const intro = document.createElement("p");
-    intro.textContent = "At Churro Stand, we make golden, crispy churros fresh throughout the day and serve them warm with your favorite toppings and dips. Whether you're here for a quick snack or a sweet celebration, you'll always find something worth craving.";
-    content.appendChild(intro)
+    const sections = document.createElement("article");
+    sections.id = "home-section-wrapper";
+    buildSection1();
+    buildSection2();
+    content.append(sections)
+
+    function buildSection1() {
+        const section1 = document.createElement("section");
+        section1.id = "section-1";
+        
+        const intro = document.createElement("p");
+        intro.textContent = "At Churro Stand, we make golden, crispy churros fresh throughout the day and serve them warm with your favorite toppings and dips. Whether you're here for a quick snack or a sweet celebration, you'll always find something worth craving.";
+        section1.append(intro)
+
+        sections.append(section1)
+    }
+    function buildSection2() {
+        const section2 = document.createElement("section");
+        section2.id = "section-2";
+
+        const box1 = document.createElement("section");
+        box1.classList.add("home-box1")
+        const box1header = document.createElement("h3");
+        box1header.textContent = "Fresh Twists";
+        const box1text = document.createElement("p");
+        box1text.textContent = "There's always something new to discover at Churro Stand. Our rotating selection of featured specials brings exciting flavors, unique toppings, and limited-time creations to the menu throughout the year. Check back often and find your next favorite."
+        box1.append(box1header)
+        box1.append(box1text)
+        
+        const box2 = document.createElement("section");
+        box2.classList.add("home-box2");
+        const box2header = document.createElement("h3");
+        box2header.textContent = "Inspired by Tradition";
+        const box2text = document.createElement("p");
+        box2text.textContent = "Churro Stand was inspired by the simple charm of traditional churro stands—fresh dough, warm cinnamon sugar, and churros made right before your eyes. We've given that experience a modern touch while staying true to what matters most: quality ingredients, made-to-order treats, and warm hospitality."
+        box2.append(box2header);
+        box2.append(box2text);
+
+        section2.append(box1);
+        section2.append(box2)
+
+        sections.append(section2)
+    }
 }
 
 function buildHomeImages() {
-    
+
 }

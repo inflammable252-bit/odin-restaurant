@@ -40,7 +40,6 @@ function switchTab(tab) {
             currentPage = "about";
             break;
     }
-    // addFooter()
 }
 function updateTabColor() {
     const allTabs = document.querySelectorAll(".button-wrapper > button");

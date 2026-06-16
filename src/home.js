@@ -6,6 +6,25 @@ import { currentPage, switchTab, updateTabColor } from "./index.js";
 
 let content = document.getElementById("content");
 
+/* const images = [
+    {
+        url: img,
+        urlS: img,
+        alt: "Alt text"
+    },
+    {
+        url: img,
+        urlS: img,
+        alt: "Alt text"
+    },
+    {
+        url: img,
+        urlS: img,
+        alt: "Alt text"
+    }
+]
+*/
+
 export default function buildHome() {
     content.replaceChildren()
 

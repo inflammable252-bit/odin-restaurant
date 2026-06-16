@@ -1,3 +1,8 @@
+export {default as h1img900w} from "./images/home1-900w.jpg";
+export {default as h2img900w} from "./images/home2-900w.jpg";
+export {default as h1img450w} from "./images/home1-450w.jpg";
+export {default as h2img450w} from "./images/home2-450w.jpg";
+
 export {default as original330w} from "./images/menu-srcset/original-330w.jpg";
 export {default as bites330w} from "./images/menu-srcset/bites-330w.jpg";
 export {default as chocolate330w} from "./images/menu-srcset/chocolate-330w.jpg";

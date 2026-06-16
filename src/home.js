@@ -3,27 +3,23 @@ import hero1200w from "./images/hero-1200w.jpg";
 import hero2000w from "./images/hero-2000w.jpg";
 
 import { currentPage, switchTab, updateTabColor } from "./index.js";
+import { h1img900w, h2img900w, h1img450w, h2img450w } from "./srcset-images.js";
 
 let content = document.getElementById("content");
 
-/* const images = [
+const images = [
     {
-        url: img,
-        urlS: img,
-        alt: "Alt text"
+        url: h1img900w,
+        urlS: h1img450w,
+        alt: "Churros on a wooden plate surrounded by three cups of sauces, sitting on a white wooden table with a red napkin."
     },
     {
-        url: img,
-        urlS: img,
-        alt: "Alt text"
-    },
-    {
-        url: img,
-        urlS: img,
-        alt: "Alt text"
+        url: h2img900w,
+        urlS: h2img450w,
+        alt: "A close picture of an enticing pile of fresh churros, gently tossed with powdered sugar."
     }
 ]
-*/
+
 
 export default function buildHome() {
     content.replaceChildren()
@@ -107,7 +103,7 @@ function buildHomeContent() {
         const box2header = document.createElement("h3");
         box2header.textContent = "Inspired by Tradition";
         const box2text = document.createElement("p");
-        box2text.textContent = "Churro Stand was inspired by the simple charm of traditional churro stands—fresh dough, warm cinnamon sugar, and churros made right before your eyes. We've given that experience a modern touch while staying true to what matters most: quality ingredients, made-to-order treats, and warm hospitality."
+        box2text.textContent = "Fresh dough, warm cinnamon sugar, and churros made right before your eyes. We've given that experience a modern touch while staying true to what matters most: quality ingredients, made-to-order treats, and warm hospitality."
         box2.append(box2header);
         box2.append(box2text);
 
@@ -119,5 +115,16 @@ function buildHomeContent() {
 }
 
 function buildHomeImages() {
+    const boxes = document.querySelectorAll("#section-2 section");
+    images.forEach((item) => {
+        const image = document.createElement("img");
+        let box;
+        item === images[0] ? box = boxes[0] : box = boxes[1];
+        image.alt = item.alt;
+        image.srcset = item.urlS + " 450w," + item.url + " 900w";
+        image.sizes = "(width <= 800px) 450px, 900px";
+        image.src = item.url;
 
+        box.append(image)
+    })
 }

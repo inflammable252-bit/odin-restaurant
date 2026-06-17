@@ -27,6 +27,7 @@ const menuItems = [
         {
             name: "Churro Sundae",
             info: "Vanilla ice cream paired with warm churro pieces and your choice of sauce, creating the perfect hot-and-cold dessert experience.",
+            urlS: sundae330w,
             url: sundae700w,
             alt: "A scoop of vanilla ice cream with fruit nestled in a bed of warm churros."
         }

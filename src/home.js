@@ -26,7 +26,7 @@ export default function buildHome() {
 
     buildHero()
     buildHomeContent()
-    buildHomeImages()
+    buildHomeBoxes()
 }
 
 function buildHero() {
@@ -113,8 +113,7 @@ function buildHomeContent() {
         sections.append(section2)
     }
 }
-
-function buildHomeImages() {
+function buildHomeBoxes() {
     const boxes = document.querySelectorAll("#section-2 section");
     images.forEach((item) => {
         const image = document.createElement("img");
@@ -122,9 +121,28 @@ function buildHomeImages() {
         item === images[0] ? box = boxes[0] : box = boxes[1];
         image.alt = item.alt;
         image.srcset = item.urlS + " 450w," + item.url + " 900w";
-        image.sizes = "(width <= 800px) 450px, 900px";
+        image.sizes = "(width <= 1400px) 450px, 900px";
         image.src = item.url;
 
         box.append(image)
+    })
+    const menuButton = document.createElement("button");
+    menuButton.textContent = "See Menu";
+    menuButton.classList.add("home-buttons");
+    boxes[0].append(menuButton);
+    menuButton.addEventListener("click", () =>{
+        switchTab("menu");
+        updateTabColor()
+        scroll(0,0)
+    })
+
+    const aboutButton = document.createElement("button");
+    aboutButton.textContent = "Learn More";
+    aboutButton.classList.add("home-buttons");
+    boxes[1].append(aboutButton);
+    aboutButton.addEventListener("click", () =>{
+        switchTab("about");
+        updateTabColor()
+        scroll(0,0)
     })
 }

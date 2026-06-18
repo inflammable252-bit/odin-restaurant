@@ -1,10 +1,12 @@
 const aboutText = "Churro Stand was inspired by the simple charm of traditional churro stands—fresh dough, warm cinnamon, and the unmistakable smell of churros being made right in front of you. We started with a simple idea: take a classic treat and serve it with the same care and craftsmanship that made people fall in love with it in the first place. Every churro is made fresh throughout the day, fried until perfectly golden, and finished with thoughtfully chosen toppings, dips, and seasonal specialties. While we've added our own modern touch, our approach remains rooted in tradition. We focus on quality ingredients, made-to-order treats, and creating a welcoming place where everyone can enjoy something sweet, whether they're stopping in for a quick snack or sharing a box with friends and family. / At the end of the day, we're a small shop that loves making great churros. No shortcuts, no unnecessary fuss—just warm, crispy churros and a little bit of happiness in every order."
 const aboutTextArr = aboutText.split(" / ");
 
-const contact = "0000 N Street / City, State 00000 / 000-000-0000 / email@emaildomain.com";
-const contactArr = contact.split(" / ");
-const hours = "Sun - Thurs: 12:00 - 9:00pm / Fri - Sat: 12:00 - 10:00pm"
-const hoursArr = hours.split(" / ");
+const directionsString = "0000 N Street / City, State 00000";
+const directionsArr = directionsString.split(" / ");
+const contactString = "000-000-0000 / email@emaildomain.com"
+const contactArr = contactString.split(" / ");
+const hoursString = "Sun - Thurs: 12:00 - 9:00pm / Fri - Sat: 12:00 - 10:00pm"
+const hoursArr = hoursString.split(" / ");
 
 import { 
     s1img900w, s1img450w,
@@ -78,20 +80,49 @@ function createContact() {
         updateTabColor()
         scroll(0,0)
     })
-    const contactInfo = document.createElement("address")
-    contactInfo.id = "contact-box";
-    contactArr.forEach((text) => {
-        const line = document.createElement("p");
-        line.textContent = text;
-        line.classList.add("contact-info");
-        contactInfo.appendChild(line)
-    });
+
+    const address = document.createElement("address");
+    address.id = "contact-box";
+
+    class contactBuilder {
+        generate(arr, id) {
+            const div = document.createElement("div");
+            div.id = id + "-box";
+            const title = document.createElement("h3");
+            title.id = id + "-title";
+            title.textContent = titlePicker(id);
+            div.append(title);
+            arr.forEach((text) => {
+                const line = document.createElement("p");
+                line.textContent = text;
+                line.classList.add(id);
+                div.appendChild(line)
+            });
+            address.append(div)
+        }
+    }
+    function titlePicker(id) {
+        let title;
+        switch(id) {
+            case ("address-info"):
+                return "Visit Us";
+            case ("hours-info"):
+                return "Hours";
+            case ("contact-info"):
+                return "Contact:"
+        }
+    }
+
+    const directions = new contactBuilder();
+    directions.generate(directionsArr, "address-info");
     
-    const contactWrapper = document.createElement("div");
-    contactWrapper.classList.add("contact");
-    contactWrapper.id = "contact-wrapper";
-    contactWrapper.append(contactInfo)
-    content.append(contactWrapper, toMenuButton)
+    const hours = new contactBuilder();
+    hours.generate(hoursArr, "hours-info");
+
+    const contact = new contactBuilder();
+    contact.generate(contactArr, "contact-info")
+
+    content.append(address, toMenuButton)
 }
 
 function combiner() {
@@ -99,7 +130,7 @@ function combiner() {
     const section1 = document.getElementById("about-section-1")
     const section2 = document.getElementById("about-section-2")
     const section3 = document.getElementById("about-section-3")
-    const contactBox = document.getElementById("contact-wrapper")
+    const address = document.getElementById("contact-box")
     const button = document.getElementById("about-menu-button")
     const imgs = new getImages();
     const headlineSection = document.createElement("section");
@@ -108,7 +139,7 @@ function combiner() {
     section1.append(text[0], imgs.section1Image, button)
     section1.after(headlineSection)
     headlineSection.append(text[1])
-    section2.append(contactBox, imgs.section2Image)
+    section2.append(address, imgs.section2Image)
     imgs.section3Images.forEach((img) => {
         section3.append(img)
     })

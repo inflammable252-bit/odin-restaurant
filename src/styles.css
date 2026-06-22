@@ -13,7 +13,7 @@
 
     --header-font: Bree Serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     --base-font: 'Source Sans 3', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    --base-font-size: 1.05rem;
+    --base-font-size: 1rem;
     --pad: calc(1rem + 1vw);
 }
 @font-face {
@@ -72,7 +72,9 @@ nav {
     align-items: end;
     background-color: var(--theme-r)
 }
-
+nav h1 {
+    align-self: center;
+}
 .button-wrapper {
     display: flex;
     flex-shrink: 0;
@@ -111,10 +113,11 @@ nav {
     }
     .button-wrapper button {
         border-radius: 14px;
-        padding: 0 5rem;
+        padding: 0 4rem;
         width: fit-content;
         flex: 0;
         align-self: center;
+        font-size: 1.25rem
     }
     .button-wrapper button:hover {
         transform: none;
@@ -171,7 +174,7 @@ div.hero-text {
     display: flex;
     flex-direction: column;
     p {
-        font-size: clamp(1.5rem, 3vw, 3rem);
+        font-size: clamp(1.3rem, 3vw, 3.2rem);
     }
 }
 button#go-to-menu {
@@ -231,7 +234,7 @@ section#section-1 {
         font-family: var(--header-font);
         font-weight: 100;
         align-self: center;
-        font-size: 1.5rem;
+        font-size: 1.3em;
         grid-column: 2/3;
         max-width: 90ch;
         padding: 2vw 4vw;
@@ -304,6 +307,14 @@ section#section-2 button.home-buttons {
     height: fit-content;
     justify-self: center;
     font-size: 1.2rem;
+}
+@media (max-width: 575px) {
+    article#home-section-wrapper {
+        font-size: 1rem;
+    }
+    section#section-1 {
+        padding: 1.35rem 0.35rem;
+    }
 }
 @media (max-width: 950px) {
     section#section-2 {
@@ -388,6 +399,11 @@ section.box img {
 @media (max-width: 830px) {
     div#menu-wrapper {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+@media (max-width: 500px) {
+    div#menu-wrapper {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -631,6 +647,18 @@ address#contact-box {
         line-height: calc(1.05rem + 1vw)
     }
 }
+@media (max-width: 500px) {
+    section#about-section-2 address#contact-box {
+        padding: 0 1rem;
+        line-height: 1.2;
+    }
+    section#about-section-2 h3 {
+        font-size: 0.9rem;
+    }
+    section#about-section-2 p {
+        font-size: 0.8rem;
+    }
+}
 section#about-section-3 {
     background-color: var(--theme-ly);
     margin-top: var(--pad);
@@ -688,7 +716,9 @@ main#content:after {
     content: "";
     width: 100vw;
 }
-footer#footer {
+
+/* Footer */
+footer {
     color: #FFF;
     width: 100vw;
     background-color: var(--theme-r);
@@ -700,13 +730,13 @@ footer#footer {
     gap: max(1rem, 1vw);
     margin-top: 2vw;
 }
-#footer div#contact-info h4 {
+footer div#contact-info h4 {
     margin-bottom: 0.5rem;
 }
-#footer div#contact-info p {
+footer div#contact-info p {
     margin-left: 20px;
 }
-#footer div#contact-form {
+footer div#contact-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -731,10 +761,51 @@ footer#footer {
         outline: 3px inset var(--theme-g);
     
     }
+    span {
+        font-family: inherit;
+    }
 }
 div#contact-input-wrapper {
     display: flex;
     align-content: center;
+}
+
+@media (max-width: 650px) {
+    footer {
+        padding: max(1rem, 1vw) 1rem;
+        justify-content: center;
+        align-items: flex-start;
+        gap: max(1rem, 3vw);
+        flex-wrap: wrap;
+    }
+    footer h4, footer span {
+        font-size: 0.85rem;
+        margin-bottom: 0;
+    }
+    footer div#contact-info {
+        display: flex;
+        align-items: center;
+        gap: max(1rem, 1vw);
+    }
+    footer div#contact-info p {
+        margin-left: 0;
+        font-size: 0.75rem;
+        line-height: 1.15;
+    }
+    footer div#contact-form {
+        align-items: start;
+    }
+    footer div#contact-form h4 {
+        display: flex;
+        flex-direction: column;
+    }
+    footer div#contact-form input {
+        font-size: 0.85rem;
+    }
+    footer div#contact-form button {
+        font-size: 0.90rem;
+        width: 5rem
+    }        
 }
 
 /* shape divider from ShapeDividers.com */

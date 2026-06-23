@@ -42,6 +42,18 @@ function createText() {
 
     content.appendChild(para)
     })
+
+    const aboutDetails = document.createElement("details");
+    aboutDetails.id = "about-details";
+
+    const aboutDetailsSummary = document.createElement("summary");
+    aboutDetailsSummary.textContent = " "
+
+    const aboutDetailsPara = document.createElement("p");
+    aboutDetailsPara.textContent = aboutTextArr[0]
+
+    aboutDetails.append(aboutDetailsSummary, aboutDetailsPara)
+    content.appendChild(aboutDetails)
 }
 function createSections() {
     const sectionWrapper = document.createElement("article");
@@ -127,16 +139,17 @@ function createContact() {
 
 function combiner() {
     const text = document.querySelectorAll("p")
-    const section1 = document.getElementById("about-section-1")
-    const section2 = document.getElementById("about-section-2")
-    const section3 = document.getElementById("about-section-3")
-    const address = document.getElementById("contact-box")
-    const button = document.getElementById("about-menu-button")
+    const seeMore = document.getElementById("about-details");
+    const section1 = document.getElementById("about-section-1");
+    const section2 = document.getElementById("about-section-2");
+    const section3 = document.getElementById("about-section-3");
+    const address = document.getElementById("contact-box");
+    const button = document.getElementById("about-menu-button");
     const imgs = new getImages();
     const headlineSection = document.createElement("section");
     headlineSection.id = "headline-section"
 
-    section1.append(text[0], imgs.section1Image, button)
+    section1.append(seeMore, text[0], imgs.section1Image, button)
     section1.after(headlineSection)
     headlineSection.append(text[1])
     section2.append(address, imgs.section2Image)
@@ -165,11 +178,3 @@ function applySrcset() {
         }
     })
 }
-
-
-/*
-image.alt = item.alt;
-image.srcset = item.urlS + " 330w," + item.url + " 700w";
-image.sizes = "(width <= 800px) 330w, 700w";
-image.src= item.url;
-*/

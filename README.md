@@ -21,10 +21,11 @@ With the increased complexity of this project over a static web page, the value 
 Modularizing parts of each page, especially the many images and srcset URLs, greatly helped with making quick changes. Conversely, structural changes within sections, such as making containers for internal elements, became more difficult. This was in large part due to the changes required in both JS functions and CSS. Such issues could be alleviated with more preplanning, more consistent organization and naming scheme.  
 
 Other improvements that the existing structure of the site supports:
--- An order page / flyout menu
--- A much more detailed Specials section on the Menu page with pictures for each rotating flavor
--- A detailed directions page with an embedded map
--- A newsletter section in the About page
--- Accents and other design elements to complement the menu-like theme of the page
+
+- An order page / flyout menu
+- A much more detailed Specials section on the Menu page with pictures for each rotating flavor
+- A detailed directions page with an embedded map
+- A newsletter section in the About page
+- Accents and other design elements to complement the menu-like theme of the page
 
 ![Home](preview-images/home-preview.png) ![Menu](preview-images/menu-preview.png) ![About on Mobile](preview-images/about-mobile-preview.png)  

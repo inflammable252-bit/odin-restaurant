@@ -7,7 +7,7 @@ import buildAbout from "./about.js"
 
 export {currentPage, switchTab, updateTabColor};
 
-let currentPage = "about";
+let currentPage = "home";
 let contentDiv = document.getElementById("content");
 
 pageOpen();
@@ -46,23 +46,4 @@ function updateTabColor() {
     allTabs.forEach((tab) => {
         tab.id === currentPage ? tab.style.backgroundColor = "rgb(253, 248, 237)" : tab.style.backgroundColor = "rgb(221, 216, 206)";
     })
-}
-function addFooter() {
-    const footer = document.createElement("footer");
-    footer.id = "footer"
-    
-    const contact = document.createElement("div");
-    contact.id = "contact-info"
-    const headline = document.createElement("h4");
-    headline.textContent = "Contact Us:"
-    const phone = document.createElement("p");
-    phone.textContent = "000-000-0000";
-    const email = document.createElement("p");
-    email.textContent = "email@emaildomain.com"
-    
-    contact.append(headline)
-    contact.append(phone);
-    contact.append(email);
-    footer.append(contact);
-    contentDiv.append(footer)
 }

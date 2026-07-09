@@ -131,6 +131,7 @@ main#content {
     align-items: center;
     position: relative;
     padding: max(1rem, 1vw) 0 0;
+    min-width: 100%;
 }
 
 h1 {
